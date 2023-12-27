@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            program
+        </title>
+        <style>
+            .container{
+                position: relative; width: 300px; height: 300px;
+            }
+            .img1{
+                position: absolute; z-index:1; width: 100%; top: 0;
+                left: 0;
+            }
+            .img2{
+                position: absolute; z-index:2; width: 100%; top: 100px;
+                left:100px;
+            }
+            .img3{
+                position: absolute; z-index:3; width: 100%; top:200px;
+                left: 200px;
+            }
+ </style>
+ <script type="text/javascript">
+    var toplayer="layer3";
+    function move(top)
+    {
+        var oldtop=document.getElementById(toplayer).style;
+        var newtop=document.getElementById(top).style;
+        oldtop.zIndex="0";
+        newtop.zIndex="10";
+        toplayer=top;
+    }
+     </script>
+     </head>
+  <body style="background-color:yellow;" >
+<div class="container">
+    <img src="boy.jpg"class="img1"id="layer1"onmouseover="move('layer1');">
+    <img src="boy.jpg"class="img2"id="layer2"onmouseover="move('layer2');">
+    <img src="boy.jpg"class="img3"id="layer3"onmouseover="move('layer3');">
+
+</div></body>
+    
+</html>
